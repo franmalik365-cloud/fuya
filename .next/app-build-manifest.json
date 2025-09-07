@@ -1,0 +1,51 @@
+{
+  "pages": {
+    "/not-found": [
+      "static/chunks/webpack-ca91b70416cab134.js",
+      "static/chunks/4bd1b696-6cfb458b2797c0af.js",
+      "static/chunks/684-11e91b4888d16e68.js",
+      "static/chunks/main-app-9f4f66c0efa5e0b9.js",
+      "static/chunks/874-46a422d1c6144273.js",
+      "static/chunks/830-6c359c26800cd879.js",
+      "static/chunks/app/not-found-b4784aaf73353690.js"
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack-ca91b70416cab134.js",
+      "static/chunks/4bd1b696-6cfb458b2797c0af.js",
+      "static/chunks/684-11e91b4888d16e68.js",
+      "static/chunks/main-app-9f4f66c0efa5e0b9.js",
+      "static/chunks/app/_not-found/page-b72775331b0d468e.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack-ca91b70416cab134.js",
+      "static/chunks/4bd1b696-6cfb458b2797c0af.js",
+      "static/chunks/684-11e91b4888d16e68.js",
+      "static/chunks/main-app-9f4f66c0efa5e0b9.js",
+      "static/css/1f3e4ba799219a62.css",
+      "static/chunks/504-ec9da713ae7f59e6.js",
+      "static/chunks/71-0eb3db4d10f76351.js",
+      "static/chunks/app/layout-2a6254d4c2de8272.js"
+    ],
+    "/page": [
+      "static/chunks/webpack-ca91b70416cab134.js",
+      "static/chunks/4bd1b696-6cfb458b2797c0af.js",
+      "static/chunks/684-11e91b4888d16e68.js",
+      "static/chunks/main-app-9f4f66c0efa5e0b9.js",
+      "static/chunks/874-46a422d1c6144273.js",
+      "static/chunks/830-6c359c26800cd879.js",
+      "static/chunks/504-ec9da713ae7f59e6.js",
+      "static/chunks/63-b849d9057fc9d2e2.js",
+      "static/chunks/452-ad59229a9b1f3281.js",
+      "static/chunks/app/page-808584428d71c139.js"
+    ],
+    "/projects/[id]/page": [
+      "static/chunks/webpack-ca91b70416cab134.js",
+      "static/chunks/4bd1b696-6cfb458b2797c0af.js",
+      "static/chunks/684-11e91b4888d16e68.js",
+      "static/chunks/main-app-9f4f66c0efa5e0b9.js",
+      "static/chunks/874-46a422d1c6144273.js",
+      "static/chunks/63-b849d9057fc9d2e2.js",
+      "static/chunks/app/projects/[id]/page-4b149f8499a8fdc2.js"
+    ]
+  }
+}
