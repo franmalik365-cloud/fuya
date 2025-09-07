@@ -18,13 +18,7 @@ const getProjectData = (id: string): Project | undefined => {
   return projects.find(p => p.id.toString() === id);
 };
 
-interface CaseStudyPageProps {
-  params: {
-    id: string;
-  };
-}
-
-const CaseStudyPage = async ({ params }: CaseStudyPageProps) => {
+const CaseStudyPage = async ({ params }: { params: { id: string } }) => {
   const project = getProjectData(params.id);
 
   if (!project) {
