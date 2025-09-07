@@ -70,7 +70,7 @@ const ServicesSection: FC = () => {
                 ))}
               </div>
 
-              <a href="#contact" className="neo-btn bg-primary text-primary-foreground mt-auto text-center">
+              <a href="https://wa.me/7021910692" target="_blank" rel="noopener noreferrer" className="neo-btn bg-primary text-primary-foreground mt-auto text-center">
                 Book Consult
               </a>
             </motion.div>
