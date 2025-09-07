@@ -24,7 +24,7 @@ interface CaseStudyPageProps {
   };
 }
 
-const CaseStudyPage = ({ params }: CaseStudyPageProps) => {
+const CaseStudyPage = async ({ params }: CaseStudyPageProps) => {
   const project = getProjectData(params.id);
 
   if (!project) {
