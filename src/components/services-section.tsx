@@ -5,7 +5,7 @@ import { Check } from 'lucide-react';
 const services = [
   {
     title: 'Quick Audit (1-week)',
-    price: 'Starting at $999',
+    price: 'Starting at ₹9999',
     description: 'A fast, comprehensive review of your existing product to identify key UI/UX improvements.',
     deliverables: [
       'Heuristic evaluation report',
