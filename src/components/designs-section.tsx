@@ -7,24 +7,29 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 
 const allDesigns = [
-  { id: 1, category: 'Mobile', src: 'https://picsum.photos/seed/mobile1/600/800', alt: 'Mobile App Design 1', 'data-ai-hint': "mobile app" },
-  { id: 2, category: 'Web', src: 'https://picsum.photos/seed/web1/800/600', alt: 'Web Design 1', 'data-ai-hint': "web design" },
-  { id: 3, category: 'AI Tools', src: 'https://picsum.photos/seed/ai1/800/600', alt: 'AI Tool Interface', 'data-ai-hint': "AI interface" },
-  { id: 4, category: 'E-commerce', src: 'https://picsum.photos/seed/ecom1/800/600', alt: 'E-commerce Platform Design', 'data-ai-hint': "ecommerce platform" },
-  { id: 5, category: 'Mobile', src: 'https://picsum.photos/seed/mobile2/600/800', alt: 'Mobile App Design 2', 'data-ai-hint': "mobile app" },
-  { id: 6, category: 'Web', src: 'https://picsum.photos/seed/web2/800/600', alt: 'Web Design 2', 'data-ai-hint': "web design" },
-  { id: 7, category: 'Mobile', src: 'https://picsum.photos/seed/mobile3/600/800', alt: 'Mobile App Design 3', 'data-ai-hint': "mobile app" },
-  { id: 8, category: 'AI Tools', src: 'https://picsum.photos/seed/ai2/800/600', alt: 'AI Analytics Dashboard', 'data-ai-hint': "analytics dashboard" },
+  { id: 1, category: ['Graphic Design'], src: 'https://picsum.photos/seed/design1/800/600', alt: 'Graphic Design 1', 'data-ai-hint': "graphic design" },
+  { id: 2, category: ['E-commerce', 'Web'], src: 'https://picsum.photos/seed/design2/800/600', alt: 'E-commerce Web Design', 'data-ai-hint': "ecommerce web" },
+  { id: 3, category: ['E-commerce', 'Web'], src: 'https://picsum.photos/seed/design3/800/600', alt: 'Web E-commerce Platform', 'data-ai-hint': "ecommerce platform" },
+  { id: 4, category: ['Mobile'], src: 'https://picsum.photos/seed/design4/600/800', alt: 'Mobile App Concept', 'data-ai-hint': "mobile app" },
+  { id: 5, category: ['Mobile', 'E-commerce'], src: 'https://picsum.photos/seed/design5/600/800', alt: 'Mobile E-commerce App', 'data-ai-hint': "mobile ecommerce" },
+  { id: 6, category: ['Mobile'], src: 'https://picsum.photos/seed/design6/600/800', alt: 'Mobile Interface', 'data-ai-hint': "mobile interface" },
+  { id: 7, category: ['Mobile'], src: 'https://picsum.photos/seed/design7/600/800', alt: 'Mobile UI Design', 'data-ai-hint': "mobile ui" },
+  { id: 8, category: ['Mobile'], src: 'https://picsum.photos/seed/design8/600/800', alt: 'Social Mobile App', 'data-ai-hint': "social app" },
+  { id: 9, category: ['Mobile'], src: 'https://picsum.photos/seed/design9/600/800', alt: 'Finance Mobile App', 'data-ai-hint': "finance app" },
+  { id: 10, category: ['Mobile'], src: 'https://picsum.photos/seed/design10/600/800', alt: 'Health Mobile App', 'data-ai-hint': "health app" },
+  { id: 11, category: ['E-commerce'], src: 'https://picsum.photos/seed/design11/800/600', alt: 'E-commerce Dashboard', 'data-ai-hint': "ecommerce dashboard" },
+  { id: 12, category: ['Mobile'], src: 'https://picsum.photos/seed/design12/600/800', alt: 'Travel Mobile App', 'data-ai-hint': "travel app" },
+  { id: 13, category: ['AI Tools'], src: 'https://picsum.photos/seed/design13/800/600', alt: 'AI Tool Dashboard', 'data-ai-hint': "AI dashboard" },
 ];
 
-const filters = ['All', 'Mobile', 'Web', 'AI Tools', 'E-commerce'];
+const filters = ['All', 'Mobile', 'Web', 'AI Tools', 'E-commerce', 'Graphic Design'];
 
 const DesignsSection: FC = () => {
   const [activeFilter, setActiveFilter] = useState('All');
 
   const filteredDesigns = activeFilter === 'All'
     ? allDesigns
-    : allDesigns.filter(design => design.category === activeFilter);
+    : allDesigns.filter(design => design.category.includes(activeFilter));
 
   return (
     <section id="designs" className="section-bg-yellow">
