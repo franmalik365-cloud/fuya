@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ArrowLeft, Briefcase, Calendar, HardHat, Settings, Check } from 'lucide-react';
+import { ArrowLeft, Briefcase, Calendar, HardHat, Settings } from 'lucide-react';
 import type { Project } from '@/lib/types';
 
 // NOTE: In a real-world app, you'd fetch this from a CMS or database
@@ -90,6 +90,12 @@ const projects: Project[] = [
   }
 ];
 
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    id: project.id.toString(),
+  }));
+}
+
 const getProjectData = (id: string): Project | undefined => {
   return projects.find(p => p.id.toString() === id);
 };
@@ -136,6 +142,7 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
               height={800}
               className="w-full h-auto object-cover"
               data-ai-hint={project.dataAiHint}
+              priority
             />
           </div>
 
