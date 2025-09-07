@@ -26,8 +26,7 @@ const letter = {
 };
 
 const HeroSection: FC = () => {
-  const line1 = "Where Creativity".split(" ");
-  const line2 = "Meets AI".split(" ");
+  const line1 = "Where Creativity Meets AI".split(" ");
 
   return (
     <section id="home" className="relative flex flex-col items-center justify-center text-center">
@@ -38,26 +37,14 @@ const HeroSection: FC = () => {
           initial="hidden"
           animate="visible"
         >
-          <div className="block">
-            {line1.map((word, index) => (
-              <span key={index} className="inline-block overflow-hidden py-2">
-                <motion.span className="inline-block" variants={letter}>
-                  {word}
-                </motion.span>
-                {index < line1.length - 1 && ' '}
-              </span>
-            ))}
-          </div>
-          <div className="block">
-            {line2.map((word, index) => (
-              <span key={index} className="inline-block overflow-hidden py-2">
-                <motion.span className="inline-block" variants={letter}>
-                  {word}
-                </motion.span>
-                {index < line2.length - 1 && ' '}
-              </span>
-            ))}
-          </div>
+          {line1.map((word, index) => (
+            <span key={index} className="inline-block overflow-hidden py-2">
+              <motion.span className="inline-block" variants={letter}>
+                {word}
+              </motion.span>
+              {index < line1.length - 1 && ' '}
+            </span>
+          ))}
         </motion.h1>
         <motion.p
           className="mt-6 max-w-2xl mx-auto text-lg md:text-2xl"
