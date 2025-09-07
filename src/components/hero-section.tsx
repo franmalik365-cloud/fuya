@@ -8,7 +8,7 @@ const sentence = {
     opacity: 1,
     transition: {
       delay: 0.5,
-      staggerChildren: 0.15,
+      staggerChildren: 0.08,
     },
   },
 };
@@ -26,19 +26,19 @@ const letter = {
 };
 
 const HeroSection: FC = () => {
-  const headline = "Designs That Think".split(" ");
+  const headline = "Where Creativity Meets AI".split(" ");
 
   return (
     <section id="home" className="relative flex flex-col items-center justify-center text-center">
       <div className="container mx-auto">
         <motion.h1
-          className="text-6xl sm:text-8xl md:text-9xl lg:text-[10rem] font-headline uppercase leading-none"
+          className="text-6xl sm:text-8xl md:text-9xl lg:text-[8rem] font-headline uppercase leading-none"
           variants={sentence}
           initial="hidden"
           animate="visible"
         >
           {headline.map((word, index) => (
-            <span key={index} className="inline-block overflow-hidden">
+            <span key={index} className="inline-block overflow-hidden py-2">
               <motion.span className="inline-block" variants={letter}>
                 {word}
               </motion.span>
