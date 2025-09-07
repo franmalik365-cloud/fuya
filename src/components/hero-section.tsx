@@ -38,12 +38,13 @@ const HeroSection: FC = () => {
           animate="visible"
         >
           {line1.map((word, index) => (
-            <span key={index} className="inline-block overflow-hidden py-2">
-              <motion.span className="inline-block" variants={letter}>
-                {word}
-              </motion.span>
-              {index < line1.length - 1 && ' '}
-            </span>
+            <motion.span
+              key={word + '-' + index}
+              className="inline-block overflow-hidden py-2"
+              variants={letter}
+            >
+              {word + (index < line1.length - 1 ? '\u00A0' : '')}
+            </motion.span>
           ))}
         </motion.h1>
         <motion.p
