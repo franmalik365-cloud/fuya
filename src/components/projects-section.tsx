@@ -1,32 +1,10 @@
 "use client";
 
 import type { FC } from 'react';
-import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogDescription,
-} from "@/components/ui/dialog";
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, X } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-
-type Project = {
-  id: number;
-  title: string;
-  category: string;
-  coverImage: string;
-  problem: string;
-  solution: string;
-  outcomes: string[];
-  stack: string[];
-  liveUrl?: string;
-  dataAiHint: string;
-};
+import { motion } from 'framer-motion';
+import type { Project } from '@/lib/types';
 
 const projects: Project[] = [
   {
@@ -34,30 +12,70 @@ const projects: Project[] = [
     title: 'SmartCart AI',
     category: 'E-commerce',
     coverImage: 'https://picsum.photos/seed/project1/800/600',
-    problem: 'Online shoppers often abandon carts due to overwhelming choices and a confusing checkout process.',
-    solution: 'We designed an AI-powered shopping assistant that provides personalized recommendations and streamlines the checkout flow into a single, conversational step.',
-    outcomes: ['35% increase in conversion rate', '50% reduction in checkout time', '20% higher average order value'],
-    stack: ['React', 'Next.js', 'AI/ML', 'Figma'],
-    liveUrl: '#',
-    dataAiHint: 'ecommerce checkout'
+    dataAiHint: 'ecommerce checkout',
+    // Detailed Case Study Info
+    client: 'E-commerce Startup',
+    industry: 'Retail Tech',
+    timeline: '4 Weeks',
+    role: 'Lead UI/UX Designer',
+    tools: ['Figma', 'FigJam', 'Next.js', 'Genkit'],
+    problemStatement: 'Online shoppers often abandon carts due to overwhelming choices and a confusing checkout process. The goal was to simplify the user journey and increase conversion.',
+    goals: [
+        'Increase conversion rate by at least 25%.',
+        'Reduce checkout time by 50%.',
+        'Personalize the shopping experience to increase average order value.'
+    ],
+    research: 'Conducted user interviews with 20 online shoppers and analyzed competitor checkout flows. Key insight: Users felt overwhelmed by too many steps and desired a more guided, conversational experience.',
+    designProcess: [
+        'Mapped the existing user journey to identify pain points.',
+        'Developed low-fidelity wireframes for a new, AI-powered conversational checkout.',
+        'Created high-fidelity, interactive prototypes in Figma for user testing.',
+        'Iterated on the design based on feedback, focusing on clarity and trust.'
+    ],
+    finalSolution: 'An AI-powered shopping assistant that provides personalized recommendations and streamlines the checkout flow into a single, conversational step. The interface is clean, intuitive, and guides the user through the purchase process effortlessly.',
+    impact: [
+        'Achieved a 35% increase in conversion rate within the first month.',
+        'Reduced average checkout time from 3 minutes to just 45 seconds.',
+        'Increased average order value by 20% through personalized AI recommendations.'
+    ],
+    learnings: 'This project highlighted the power of conversational UI in simplifying complex processes. I learned that integrating AI thoughtfully can significantly enhance user trust and efficiency. The next step is to explore voice commands for an even more accessible experience.'
   },
   {
     id: 2,
     title: 'Insight Dashboard',
     category: 'AI Tools',
     coverImage: 'https://picsum.photos/seed/project2/800/600',
-    problem: 'Data analysts were spending hours manually sifting through data to find meaningful insights.',
-    solution: 'An intuitive dashboard that uses natural language processing to allow users to ask questions and get instant, visualized answers from complex datasets.',
-    outcomes: ['80% faster data analysis', 'Identified key growth opportunities leading to 15% revenue increase'],
-    stack: ['Vue.js', 'Python', 'Tableau', 'Sketch'],
-    liveUrl: '#',
-    dataAiHint: 'data dashboard'
+    dataAiHint: 'data dashboard',
+    // Detailed Case Study Info
+    client: 'Data Analytics Firm',
+    industry: 'Business Intelligence',
+    timeline: '6 Weeks',
+    role: 'Product Designer',
+    tools: ['Vue.js', 'Python', 'Tableau', 'Sketch'],
+    problemStatement: 'Data analysts were spending hours manually sifting through complex datasets to find meaningful insights, leading to slow and inefficient reporting.',
+    goals: [
+        'Reduce time-to-insight by 75%.',
+        'Create a user-friendly interface that empowers non-technical users to explore data.',
+        'Ensure the dashboard is fully responsive for on-the-go access.'
+    ],
+    research: 'Shadowed data analysts to understand their workflow and pain points. A competitive analysis revealed that most BI tools were powerful but had a steep learning curve. Users needed something intuitive.',
+    designProcess: [
+        'Began with brainstorming sessions and created information architecture diagrams.',
+        'Designed wireframes focusing on a modular, customizable dashboard layout.',
+        'Developed high-fidelity mockups in Sketch, emphasizing clear data visualization principles.',
+        'Conducted usability testing with analysts to refine the interface and interactions.'
+    ],
+    finalSolution: 'An intuitive dashboard that uses natural language processing, allowing users to ask questions and get instant, visualized answers. The design features customizable widgets and a clean, accessible interface that makes complex data understandable at a glance.',
+    impact: [
+        'Reduced average data analysis time by 80%.',
+        'Empowered the sales team to self-serve data, leading to the identification of key growth opportunities and a 15% increase in quarterly revenue.',
+        'Received a 95% user satisfaction score from internal stakeholders.'
+    ],
+    learnings: 'The biggest takeaway was the importance of bridging the gap between powerful technology and user-friendly design. By focusing on natural language interaction, we made data accessible to everyone. The next phase will involve adding predictive analytics features.'
   },
 ];
 
 const ProjectsSection: FC = () => {
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
   return (
     <section id="projects" className="section-bg-blue">
       <div className="container mx-auto">
@@ -66,89 +84,32 @@ const ProjectsSection: FC = () => {
         
         <div className="grid md:grid-cols-2 gap-12">
           {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className="neo-card cursor-pointer group"
-              whileHover={{
-                transform: "translate(-8px, -8px)",
-                boxShadow: "8px 8px 0px 0px hsl(var(--foreground))",
-              }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="overflow-hidden mb-6 border-2 border-foreground">
-                <Image
-                  src={project.coverImage}
-                  alt={project.title}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-                  data-ai-hint={project.dataAiHint}
-                />
-              </div>
-              <h3 className="text-3xl mb-2">{project.title}</h3>
-              <p className="font-bold text-primary">{project.category}</p>
-            </motion.div>
+            <Link key={project.id} href={`/projects/${project.id}`} passHref>
+              <motion.div
+                className="neo-card cursor-pointer group h-full flex flex-col"
+                whileHover={{
+                  transform: "translate(-8px, -8px)",
+                  boxShadow: "8px 8px 0px 0px hsl(var(--foreground))",
+                }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="overflow-hidden mb-6 border-2 border-foreground">
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-ai-hint={project.dataAiHint}
+                  />
+                </div>
+                <h3 className="text-3xl mb-2">{project.title}</h3>
+                <p className="font-bold text-primary">{project.category}</p>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
-
-      <AnimatePresence>
-        {selectedProject && (
-          <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-            <DialogContent className="neo-card max-w-4xl w-[95vw] h-[90vh] flex flex-col p-0">
-              <DialogHeader className="p-6 pb-0 flex-row items-center justify-between border-b-2 border-foreground">
-                <div>
-                  <DialogTitle className="text-4xl">{selectedProject.title}</DialogTitle>
-                  <DialogDescription className="text-lg font-bold text-primary">{selectedProject.category}</DialogDescription>
-                </div>
-                <Button variant="ghost" size="icon" onClick={() => setSelectedProject(null)} className="ml-auto">
-                  <X />
-                </Button>
-              </DialogHeader>
-              <div className="p-6 overflow-y-auto">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div className="overflow-hidden border-2 border-foreground">
-                    <Image
-                      src={selectedProject.coverImage}
-                      alt={selectedProject.title}
-                      width={800}
-                      height={600}
-                      className="w-full h-auto object-cover"
-                      data-ai-hint={selectedProject.dataAiHint}
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-2xl mb-2">Problem</h4>
-                    <p className="mb-6">{selectedProject.problem}</p>
-                    <h4 className="text-2xl mb-2">Solution</h4>
-                    <p className="mb-6">{selectedProject.solution}</p>
-                    {selectedProject.liveUrl && (
-                      <a href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer" className="neo-btn bg-secondary text-secondary-foreground mb-6">
-                        View Live Project <ExternalLink className="ml-2" size={18} />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                <div className="grid md:grid-cols-2 gap-8 mt-8">
-                   <div>
-                    <h4 className="text-2xl mb-4">Tech Stack</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedProject.stack.map(tech => <Badge key={tech} className="text-lg py-1 px-3 border-2 border-foreground bg-card">{tech}</Badge>)}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-2xl mb-4">Outcomes</h4>
-                    <ul className="list-disc list-inside space-y-2">
-                      {selectedProject.outcomes.map(outcome => <li key={outcome}>{outcome}</li>)}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
