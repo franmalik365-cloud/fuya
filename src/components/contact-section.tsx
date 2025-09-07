@@ -47,10 +47,23 @@ const ContactSection: FC = () => {
   })
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values)
+    const whatsAppNumber = "7021910692";
+    const message = `
+      *New Contact Form Submission*
+
+      *Name:* ${values.name}
+      *Email:* ${values.email}
+      *Company:* ${values.company || 'N/A'}
+      *Message:* ${values.message}
+    `;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${whatsAppNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappUrl, '_blank');
+
     toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+      title: "Message Ready!",
+      description: "Your message is ready to be sent in WhatsApp.",
     })
     form.reset()
   }
@@ -133,8 +146,8 @@ const ContactSection: FC = () => {
           <div className="mt-12 text-center">
             <h3 className="text-2xl mb-4">Or reach me here:</h3>
             <div className="flex justify-center items-center gap-8">
-              <a href="mailto:hello@fuya.design" className="neo-btn bg-secondary text-secondary-foreground"><Mail /> Email</a>
-              <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="neo-btn bg-secondary text-secondary-foreground"><MessageCircle /> WhatsApp</a>
+              <a href="mailto:fuyachavda01@gmail.com" className="neo-btn bg-secondary text-secondary-foreground"><Mail /> Email</a>
+              <a href="https://wa.me/7021910692" target="_blank" rel="noopener noreferrer" className="neo-btn bg-secondary text-secondary-foreground"><MessageCircle /> WhatsApp</a>
             </div>
           </div>
 

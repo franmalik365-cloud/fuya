@@ -60,7 +60,7 @@ const HeroSection: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.8 }}
         >
-          <a href="#contact" className="neo-btn bg-primary text-primary-foreground">
+          <a href="https://wa.me/7021910692" target="_blank" rel="noopener noreferrer" className="neo-btn bg-primary text-primary-foreground">
             Book a Consult
           </a>
           <a href="#projects" className="neo-btn bg-card text-card-foreground">

@@ -39,7 +39,7 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-          <a href="#contact" className="neo-btn bg-primary text-primary-foreground !px-6 !py-2">
+          <a href="mailto:fuyachavda01@gmail.com" className="neo-btn bg-primary text-primary-foreground !px-6 !py-2">
             Hire Me
           </a>
         </nav>
@@ -63,7 +63,7 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
-             <a href="#contact" onClick={toggleMenu} className="neo-btn bg-primary text-primary-foreground mt-8">
+             <a href="mailto:fuyachavda01@gmail.com" onClick={toggleMenu} className="neo-btn bg-primary text-primary-foreground mt-8">
               Hire Me
             </a>
           </motion.nav>
