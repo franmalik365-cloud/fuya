@@ -40,7 +40,7 @@ const Footer: FC = () => {
           <a href="https://x.com/finsh365" target="_blank" rel="noopener noreferrer" aria-label="X" className="hover:text-primary transition-colors"><XIcon /></a>
         </div>
         <p>&copy; {new Date().getFullYear()} Fuya. All Rights Reserved.</p>
-        <p>Built with purpose and a touch of AI magic.</p>
+        <p>Built with purpose and make for show case digital magic</p>
       </div>
     </footer>
   );
