@@ -29,7 +29,7 @@ const HeroSection: FC = () => {
   const line1 = "Where Creativity & AI Collide".split(" ");
 
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center text-center">
+    <section id="home" className="main-section relative flex flex-col items-center justify-center text-center">
       <div className="container mx-auto">
         <motion.h1
           className="text-6xl sm:text-8xl md:text-9xl lg:text-[8rem] font-headline uppercase leading-none"

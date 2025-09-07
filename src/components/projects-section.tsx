@@ -11,7 +11,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Stealth AI',
     category: 'Community for Founder App',
-    coverImage: 'https://picsum.photos/seed/project1/800/600',
+    coverImage: 'https://media.licdn.com/dms/image/v2/D5622AQEUqMsy7LEqMw/feedshare-shrink_1280/B56Zgtg1OQHQAw-/0/1753110239798?e=1759968000&v=beta&t=PYwVQQp3Tzi-YvQAyyhlzojrU0V-LQz1PjaGqAIUSgY',
     dataAiHint: 'ecommerce checkout',
     // Detailed Case Study Info
     client: 'E-commerce Startup',
@@ -83,7 +83,7 @@ const projects: Project[] = [
 
 const ProjectsSection: FC = () => {
   return (
-    <section id="projects" className="section-bg-blue">
+    <section id="projects" className="main-section section-bg-blue">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-6xl mb-4 text-center">Case Studies</h2>
         <p className="text-center mb-12 text-lg">Here's some of my work. Click on a project to learn more.</p>

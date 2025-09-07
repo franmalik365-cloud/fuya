@@ -69,7 +69,7 @@ const ContactSection: FC = () => {
   }
 
   return (
-    <section id="contact" className="section-bg-blue">
+    <section id="contact" className="main-section section-bg-blue">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

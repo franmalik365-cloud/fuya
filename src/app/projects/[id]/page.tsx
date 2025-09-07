@@ -13,7 +13,7 @@ const projects: Project[] = [
     id: 1,
     title: 'Stealth AI',
     category: 'Community for Founder App',
-    coverImage: 'https://picsum.photos/seed/project1/1200/800',
+    coverImage: 'https://media.licdn.com/dms/image/v2/D5622AQEUqMsy7LEqMw/feedshare-shrink_1280/B56Zgtg1OQHQAw-/0/1753110239798?e=1759968000&v=beta&t=PYwVQQp3Tzi-YvQAyyhlzojrU0V-LQz1PjaGqAIUSgY',
     dataAiHint: 'ecommerce checkout',
     client: 'E-commerce Startup',
     industry: 'Retail Tech',
@@ -113,13 +113,25 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
       <main className="container mx-auto px-4 sm:px-8 md:px-16 pb-20">
         <article className="max-w-4xl mx-auto">
           {/* Header Section */}
-          <section className="text-center mb-16">
+          <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-headline uppercase mb-4">{project.title}</h1>
             <p className="text-xl md:text-2xl text-primary font-bold">{project.category}</p>
-          </section>
+          </div>
+
+          {/* Cover Image */}
+          <div className="mb-16 border-2 border-foreground neo-card !p-2">
+            <Image
+              src={project.coverImage}
+              alt={project.title}
+              width={1200}
+              height={800}
+              className="w-full h-auto object-cover"
+              data-ai-hint={project.dataAiHint}
+            />
+          </div>
 
           {/* Overview Section */}
-          <section className="mb-16">
+          <div className="mb-16">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               <div className="neo-card"><Briefcase className="mx-auto mb-2" /> <h3 className="font-bold">Client</h3> <p>{project.client}</p></div>
               <div className="neo-card"><HardHat className="mx-auto mb-2" /> <h3 className="font-bold">Role</h3> <p>{project.role}</p></div>
@@ -134,19 +146,7 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
                 ))}
               </div>
             </div>
-          </section>
-
-          {/* Cover Image */}
-          <section className="mb-16 border-2 border-foreground">
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              width={1200}
-              height={800}
-              className="w-full h-auto object-cover"
-              data-ai-hint={project.dataAiHint}
-            />
-          </section>
+          </div>
 
           {/* Main Content */}
           <div className="space-y-16">
@@ -178,7 +178,7 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
               <CaseStudySection title="Gallery">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                   {project.galleryImages.map((src, i) => (
-                    <div key={i} className="border-2 border-foreground">
+                    <div key={i} className="border-2 border-foreground neo-card !p-1">
                        <Image
                         src={src}
                         alt={`${project.title} gallery image ${i + 1}`}
@@ -215,12 +215,12 @@ interface CaseStudySectionProps {
 
 const CaseStudySection: FC<CaseStudySectionProps> = ({ title, children }) => {
     return (
-        <section>
+        <div>
             <h2 className="text-3xl md:text-4xl font-headline mb-6 border-b-2 border-foreground pb-2">{title}</h2>
-            <div className="text-lg space-y-4 prose prose-lg max-w-none">
+            <div className="text-lg space-y-4 max-w-none">
                 {children}
             </div>
-        </section>
+        </div>
     );
 }
 

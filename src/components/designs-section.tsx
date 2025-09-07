@@ -32,7 +32,7 @@ const DesignsSection: FC = () => {
     : allDesigns.filter(design => design.category.includes(activeFilter));
 
   return (
-    <section id="designs" className="section-bg-yellow">
+    <section id="designs" className="main-section section-bg-yellow">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-6xl mb-4 text-center">Visual Gallery</h2>
         <p className="text-center mb-12 text-lg">A collection of my recent design explorations and projects.</p>

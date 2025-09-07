@@ -40,7 +40,7 @@ const services = [
 
 const ServicesSection: FC = () => {
   return (
-    <section id="services" className="section-bg-green">
+    <section id="services" className="main-section section-bg-green">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-6xl mb-4 text-center">Services</h2>
         <p className="text-center mb-12 text-lg max-w-2xl mx-auto">

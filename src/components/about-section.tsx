@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const AboutSection: FC = () => {
   return (
-    <section id="about" className="section-bg-red">
+    <section id="about" className="main-section section-bg-red">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

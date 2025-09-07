@@ -43,7 +43,7 @@ const itemVariants = {
 
 const ResumeSection: FC = () => {
   return (
-    <section id="resume" className="section-bg-red">
+    <section id="resume" className="main-section section-bg-red">
       <div className="container mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
