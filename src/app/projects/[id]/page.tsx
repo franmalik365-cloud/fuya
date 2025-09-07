@@ -5,8 +5,8 @@ import { notFound } from 'next/navigation';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, Briefcase, Calendar, HardHat, Settings } from 'lucide-react';
-import type { Project } from '@/lib/types';
 import { projects } from '@/lib/projects-data';
+import type { Project } from '@/lib/types';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -14,20 +14,16 @@ export async function generateStaticParams() {
   }));
 }
 
-const getProjectData = (id: string): Project | undefined => {
-  return projects.find(p => p.id.toString() === id);
-};
-
-interface CaseStudyPageProps {
-  params: { id: string };
-}
-
-const CaseStudyPage = async ({ params }: CaseStudyPageProps) => {
-  const project = getProjectData(params.id);
-
+async function getProject(id: string): Promise<Project> {
+  const project = projects.find(p => p.id.toString() === id);
   if (!project) {
     notFound();
   }
+  return project;
+}
+
+export default async function CaseStudyPage({ params }: { params: { id: string } }) {
+  const project = await getProject(params.id);
 
   return (
     <div className="bg-background font-body text-foreground">
@@ -155,5 +151,3 @@ const CaseStudySection: FC<CaseStudySectionProps> = ({ title, children }) => {
         </div>
     );
 }
-
-export default CaseStudyPage;
