@@ -24,7 +24,7 @@ interface CaseStudyPageProps {
   };
 }
 
-const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
+const CaseStudyPage = ({ params }: CaseStudyPageProps) => {
   const project = getProjectData(params.id);
 
   if (!project) {
