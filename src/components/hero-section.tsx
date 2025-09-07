@@ -52,7 +52,7 @@ const HeroSection: FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 1.5 }}
         >
-          AI-driven UI/UX for product teams — usable, beautiful, measurable.
+          Creating human-centered experiences powered by thoughtful design and AI innovation.
         </motion.p>
         <motion.div
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-6"
