@@ -26,7 +26,7 @@ const letter = {
 };
 
 const HeroSection: FC = () => {
-  const line1 = "Where Creativity Meets AI".split(" ");
+  const line1 = "Where Creativity & AI Collide".split(" ");
 
   return (
     <section id="home" className="relative flex flex-col items-center justify-center text-center">
