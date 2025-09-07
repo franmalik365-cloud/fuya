@@ -18,4 +18,5 @@ export type Project = {
   finalSolution: string;
   impact: string[];
   learnings: string;
+  galleryImages?: string[];
 };

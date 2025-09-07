@@ -39,7 +39,13 @@ const projects: Project[] = [
         'Reduced average checkout time from 3 minutes to just 45 seconds.',
         'Increased average order value by 20% through personalized AI recommendations.'
     ],
-    learnings: 'This project highlighted the power of conversational UI in simplifying complex processes. I learned that integrating AI thoughtfully can significantly enhance user trust and efficiency. The next step is to explore voice commands for an even more accessible experience.'
+    learnings: 'This project highlighted the power of conversational UI in simplifying complex processes. I learned that integrating AI thoughtfully can significantly enhance user trust and efficiency. The next step is to explore voice commands for an even more accessible experience.',
+    galleryImages: [
+      'https://media.licdn.com/dms/image/v2/D5622AQEUqMsy7LEqMw/feedshare-shrink_1280/B56Zgtg1OQHQAw-/0/1753110239798?e=1759968000&v=beta&t=PYwVQQp3Tzi-YvQAyyhlzojrU0V-LQz1PjaGqAIUSgY',
+      'https://media.licdn.com/dms/image/v2/D5622AQEUqMsy7LEqMw/feedshare-shrink_1280/B56Zgtg1OQHQAw-/0/1753110239798?e=1759968000&v=beta&t=PYwVQQp3Tzi-YvQAyyhlzojrU0V-LQz1PjaGqAIUSgY',
+      'https://media.licdn.com/dms/image/v2/D5622AQFOb9dWO5CfYw/feedshare-shrink_2048_1536/B56Zgtg1NmHkAw-/0/1753110239819?e=1759968000&v=beta&t=UcT1ULFKJY3xWywJ2G8hdGAPzQbr229CprJhKTfLMgc',
+      'https://media.licdn.com/dms/image/v2/D5622AQEFR7ER5N7NHQ/feedshare-shrink_2048_1536/B56Zgtg1NyH0As-/0/1753110240390?e=1759968000&v=beta&t=7j2a3b36r0kKIQikV23UKgqx6j_5JSShug9bJLD2K9s'
+    ]
   },
   {
     id: 2,
@@ -167,6 +173,24 @@ const CaseStudyPage: FC<CaseStudyPageProps> = ({ params }) => {
             <CaseStudySection title="Final Solution">
               <p>{project.finalSolution}</p>
             </CaseStudySection>
+
+            {project.galleryImages && project.galleryImages.length > 0 && (
+              <CaseStudySection title="Gallery">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                  {project.galleryImages.map((src, i) => (
+                    <div key={i} className="border-2 border-foreground">
+                       <Image
+                        src={src}
+                        alt={`${project.title} gallery image ${i + 1}`}
+                        width={800}
+                        height={600}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </CaseStudySection>
+            )}
             
             <CaseStudySection title="Impact & Results">
               <ul className="list-disc list-inside space-y-2">
