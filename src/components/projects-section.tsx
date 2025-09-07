@@ -16,7 +16,7 @@ const projects: Project[] = [
     // Detailed Case Study Info
     client: 'E-commerce Startup',
     industry: 'Retail Tech',
-    timeline: '4 Weeks',
+    timeline: '1 Week',
     role: 'Lead UI/UX Designer',
     tools: ['Figma', 'FigJam', 'Next.js', 'Genkit'],
     problemStatement: 'Online shoppers often abandon carts due to overwhelming choices and a confusing checkout process. The goal was to simplify the user journey and increase conversion.',
@@ -54,7 +54,7 @@ const projects: Project[] = [
     dataAiHint: 'edtech app',
     client: 'ProPeers (Parikh Jain)',
     industry: 'Community & Networking (Tech Enthusiasts, Dreamers)',
-    timeline: '4 Weeks (Redesign project)',
+    timeline: '1 Week',
     role: 'UI/UX Designer & UX Researcher',
     tools: ['Figma', 'Notion', 'FigJam'],
     problemStatement: 'ProPeers is a platform for dreamers and tech enthusiasts to connect, but user retention was low despite a strong concept. The problem wasn’t in the features but in the visual and interaction design — users came, explored, and left. Key pain points included a weak visual hierarchy, underutilized features due to poor usability, and no emotional connection to keep users engaged.',
