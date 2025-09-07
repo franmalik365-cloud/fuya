@@ -48,37 +48,45 @@ const projects: Project[] = [
   },
   {
     id: 2,
-    title: 'Insight Dashboard',
-    category: 'AI Tools',
-    coverImage: 'https://picsum.photos/seed/project2/800/600',
-    dataAiHint: 'data dashboard',
-    // Detailed Case Study Info
-    client: 'Data Analytics Firm',
-    industry: 'Business Intelligence',
-    timeline: '6 Weeks',
-    role: 'Product Designer',
-    tools: ['Vue.js', 'Python', 'Tableau', 'Sketch'],
-    problemStatement: 'Data analysts were spending hours manually sifting through complex datasets to find meaningful insights, leading to slow and inefficient reporting.',
+    title: 'ProPeers App Redesign',
+    category: 'Edtech App Learning',
+    coverImage: 'https://media.licdn.com/dms/image/v2/D4E22AQHw47uzD_ZTjA/feedshare-shrink_2048_1536/B4EZd.VA64HgBI-/0/1750171129986?e=1759968000&v=beta&t=lqbRxwCXjGzRDs11pvr6dBtfXYXViA73IUGaXp7Odfc',
+    dataAiHint: 'edtech app',
+    client: 'ProPeers (Parikh Jain)',
+    industry: 'Community & Networking (Tech Enthusiasts, Dreamers)',
+    timeline: '4 Weeks (Redesign project)',
+    role: 'UI/UX Designer & UX Researcher',
+    tools: ['Figma', 'Notion', 'FigJam'],
+    problemStatement: 'ProPeers is a platform for dreamers and tech enthusiasts to connect, but user retention was low despite a strong concept. The problem wasn’t in the features but in the visual and interaction design — users came, explored, and left. Key pain points included a weak visual hierarchy, underutilized features due to poor usability, and no emotional connection to keep users engaged.',
     goals: [
-        'Reduce time-to-insight by 75%.',
-        'Create a user-friendly interface that empowers non-technical users to explore data.',
-        'Ensure the dashboard is fully responsive for on-the-go access.'
+      'Redesign major user flows with a focus on emotional connection.',
+      'Create a visual identity aligned with the brand.',
+      'Increase usability, engagement, and retention.',
+      'Introduce innovative features to differentiate the platform.'
     ],
-    research: 'Shadowed data analysts to understand their workflow and pain points. A competitive analysis revealed that most BI tools were powerful but had a steep learning curve. Users needed something intuitive.',
+    research: 'As an active ProPeers user for 1 year, I conducted heuristic evaluation and user journey mapping. Key insights revealed that the visual design didn’t reflect the platform’s community-driven purpose, users found the app "functional but forgettable," and a lack of micro-interactions reduced emotional stickiness.',
     designProcess: [
-        'Began with brainstorming sessions and created information architecture diagrams.',
-        'Designed wireframes focusing on a modular, customizable dashboard layout.',
-        'Developed high-fidelity mockups in Sketch, emphasizing clear data visualization principles.',
-        'Conducted usability testing with analysts to refine the interface and interactions.'
+      'Adopted an Observation → Redesign → Innovation approach.',
+      'Defined a brand-inspired color system to move beyond plain white.',
+      'Established a strong grid system for scalable consistency.',
+      'Integrated micro-interactions for engagement (hover states, transitions).',
+      'Designed an AI Roadmap feature with a custom UI to give ProPeers a unique advantage.'
     ],
-    finalSolution: 'An intuitive dashboard that uses natural language processing, allowing users to ask questions and get instant, visualized answers. The design features customizable widgets and a clean, accessible interface that makes complex data understandable at a glance.',
+    finalSolution: 'Redesigned key modules to improve usability and flow, including the Home Page, Notifications, Search, Chat, and Profile Page. A bonus feature, the AI Roadmap, was introduced to provide a personalized, AI-powered career/growth roadmap. Improvements focused on brand-inspired colors, emotional UX, clear information flow, and new UX features to drive engagement.',
     impact: [
-        'Reduced average data analysis time by 80%.',
-        'Empowered the sales team to self-serve data, leading to the identification of key growth opportunities and a 15% increase in quarterly revenue.',
-        'Received a 95% user satisfaction score from internal stakeholders.'
+      'Higher potential retention by directly targeting usability issues.',
+      'Boosted emotional connection through a visual system aligned with brand psychology.',
+      'Increased feature engagement in chat, roadmap, and product sections.',
+      'Positioned ProPeers as a community-first, innovation-driven app.'
     ],
-    learnings: 'The biggest takeaway was the importance of bridging the gap between powerful technology and user-friendly design. By focusing on natural language interaction, we made data accessible to everyone. The next phase will involve adding predictive analytics features.'
-  },
+    learnings: 'Emotional UX is as critical as features for community-driven platforms. The next steps involve A/B testing the redesigned flows with live users and expanding the AI Roadmap into a scalable product offering.',
+    galleryImages: [
+      'https://media.licdn.com/dms/image/v2/D4E22AQHw47uzD_ZTjA/feedshare-shrink_2048_1536/B4EZd.VA64HgBI-/0/1750171129986?e=1759968000&v=beta&t=lqbRxwCXjGzRDs11pvr6dBtfXYXViA73IUGaXp7Odfc',
+      'https://media.licdn.com/dms/image/v2/D5622AQGgUwVVwIF5Lg/feedshare-shrink_2048_1536/B56ZgjesncHcAs-/0/1752941910123?e=1759968000&v=beta&t=keov1HiqM2__aipHo-BRhcDEPqkVQ7Et_VSyI1SuWVs',
+      'https://media.licdn.com/dms/image/v2/D5622AQG0touULq-rIQ/feedshare-shrink_2048_1536/B56Zgjesn5HMAs-/0/1752941912283?e=1759968000&v=beta&t=p7jAEsEdu02idHhR806w_S58xgEMsNTyIg2zzk_XVwI',
+      'https://media.licdn.com/dms/image/v2/D5622AQEu7tAVzDHxSQ/feedshare-shrink_2048_1536/B56Zgjeso8HMAo-/0/1752941909907?e=1759968000&v=beta&t=17MOd6PXcfL-Gin3AZ4qqRW9eos896rG0aXoKrR24TA',
+    ],
+  }
 ];
 
 const ProjectsSection: FC = () => {
