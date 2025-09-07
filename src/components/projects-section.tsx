@@ -9,8 +9,8 @@ import type { Project } from '@/lib/types';
 const projects: Project[] = [
   {
     id: 1,
-    title: 'SmartCart AI',
-    category: 'E-commerce',
+    title: 'Stealth AI',
+    category: 'Community for Founder App',
     coverImage: 'https://picsum.photos/seed/project1/800/600',
     dataAiHint: 'ecommerce checkout',
     // Detailed Case Study Info
