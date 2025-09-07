@@ -1,3 +1,5 @@
+"use client";
+
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';

@@ -1,3 +1,5 @@
+"use client";
+
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Check } from 'lucide-react';

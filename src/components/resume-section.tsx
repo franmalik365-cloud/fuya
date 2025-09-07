@@ -1,3 +1,5 @@
+"use client";
+
 import type { FC } from 'react';
 import { motion } from 'framer-motion';
 import { Download, Briefcase, GraduationCap, BrainCircuit, Wrench } from 'lucide-react';
