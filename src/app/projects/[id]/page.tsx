@@ -14,7 +14,7 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getProject(id: string): Promise<Project> {
+function getProject(id: string): Project {
   const project = projects.find(p => p.id.toString() === id);
   if (!project) {
     notFound();
@@ -22,8 +22,8 @@ async function getProject(id: string): Promise<Project> {
   return project;
 }
 
-export default async function CaseStudyPage({ params }: { params: { id: string } }) {
-  const project = await getProject(params.id);
+const CaseStudyPage = ({ params }: { params: { id: string } }) => {
+  const project = getProject(params.id);
 
   return (
     <div className="bg-background font-body text-foreground">
@@ -135,6 +135,8 @@ export default async function CaseStudyPage({ params }: { params: { id: string }
     </div>
   );
 };
+
+export default CaseStudyPage;
 
 interface CaseStudySectionProps {
     title: string;
